@@ -3316,39 +3316,139 @@
 
         <div class="cm-page" data-page="2">
           <div class="cm-field">
-            <label>Treatment of Interest</label>
-            <div class="cm-treatment-grid">
-              <label class="cm-treat-option">
-                <input type="radio" name="treatment" value="Botox" required>
-                <span class="cm-treat-card"><span class="cm-treat-icon">✦</span><span
-                    class="cm-treat-name">Botox</span><span class="cm-treat-price">from $300</span></span>
-              </label>
-              <label class="cm-treat-option">
-                <input type="radio" name="treatment" value="Lip Augmentation">
-                <span class="cm-treat-card"><span class="cm-treat-icon">◈</span><span class="cm-treat-name">Lip
-                    Augmentation</span><span class="cm-treat-price">from $110</span></span>
-              </label>
-              <label class="cm-treat-option">
-                <input type="radio" name="treatment" value="Facial Volumetry">
-                <span class="cm-treat-card"><span class="cm-treat-icon">◉</span><span class="cm-treat-name">Facial
-                    Volumetry</span><span class="cm-treat-price">from $400</span></span>
-              </label>
-              <label class="cm-treat-option">
-                <input type="radio" name="treatment" value="Mesotherapy">
-                <span class="cm-treat-card"><span class="cm-treat-icon">❋</span><span
-                    class="cm-treat-name">Mesotherapy</span><span class="cm-treat-price">from $250</span></span>
-              </label>
-              <label class="cm-treat-option">
-                <input type="radio" name="treatment" value="Dermal Fillers">
-                <span class="cm-treat-card"><span class="cm-treat-icon">◇</span><span class="cm-treat-name">Dermal
-                    Fillers</span><span class="cm-treat-price">from $400</span></span>
-              </label>
-              <label class="cm-treat-option">
-                <input type="radio" name="treatment" value="Biostimulators">
-                <span class="cm-treat-card"><span class="cm-treat-icon">⬡</span><span
-                    class="cm-treat-name">Biostimulators</span><span class="cm-treat-price">from $300</span></span>
-              </label>
+            <label>Injectable Treatments (Select one or more)</label>
+            <div class="cm-treatment-categorized">
+              
+              <!-- 1. BOTOX -->
+              <div class="cm-treat-category">
+                <button type="button" class="cm-treat-category-header" onclick="cmToggleCategory(this)">
+                  <span class="cm-category-icon">▸</span>
+                  <span class="cm-category-name">Botox</span>
+                </button>
+                <div class="cm-treat-category-items">
+                  <label class="cm-treat-sub-option">
+                    <input type="checkbox" name="treatments" value="Botox - Full Forehead (2 Areas) - $300">
+                    <span class="cm-treat-sub-card"><span class="cm-treat-sub-name">Full Forehead (2 Areas)</span><span class="cm-treat-sub-price">$300</span></span>
+                  </label>
+                  <label class="cm-treat-sub-option">
+                    <input type="checkbox" name="treatments" value="Botox - 3 Areas (Forehead + Eyes) - $400">
+                    <span class="cm-treat-sub-card"><span class="cm-treat-sub-name">3 Areas (Forehead + Eyes)</span><span class="cm-treat-sub-price">$400</span></span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- 2. LIP AUGMENTATION -->
+              <div class="cm-treat-category">
+                <button type="button" class="cm-treat-category-header" onclick="cmToggleCategory(this)">
+                  <span class="cm-category-icon">▸</span>
+                  <span class="cm-category-name">Lip Augmentation</span>
+                </button>
+                <div class="cm-treat-category-items">
+                  <label class="cm-treat-sub-option">
+                    <input type="checkbox" name="treatments" value="Lip Flip - $110">
+                    <span class="cm-treat-sub-card"><span class="cm-treat-sub-name">Lip Flip</span><span class="cm-treat-sub-price">$110</span></span>
+                  </label>
+                  <label class="cm-treat-sub-option">
+                    <input type="checkbox" name="treatments" value="Lip Augmentation via Fillers - from $400">
+                    <span class="cm-treat-sub-card"><span class="cm-treat-sub-name">Lip Augmentation via Fillers</span><span class="cm-treat-sub-price">from $400</span></span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- 3. FACIAL VOLUMETRY -->
+              <div class="cm-treat-category">
+                <button type="button" class="cm-treat-category-header" onclick="cmToggleCategory(this)">
+                  <span class="cm-category-icon">▸</span>
+                  <span class="cm-category-name">Facial Volumetry</span>
+                </button>
+                <div class="cm-treat-category-items">
+                  <label class="cm-treat-sub-option">
+                    <input type="checkbox" name="treatments" value="Belotero - $420">
+                    <span class="cm-treat-sub-card"><span class="cm-treat-sub-name">Belotero</span><span class="cm-treat-sub-price">$420</span></span>
+                  </label>
+                  <label class="cm-treat-sub-option">
+                    <input type="checkbox" name="treatments" value="Juvederm - $400">
+                    <span class="cm-treat-sub-card"><span class="cm-treat-sub-name">Juvederm</span><span class="cm-treat-sub-price">$400</span></span>
+                  </label>
+                  <label class="cm-treat-sub-option">
+                    <input type="checkbox" name="treatments" value="Restylane - $400">
+                    <span class="cm-treat-sub-card"><span class="cm-treat-sub-name">Restylane</span><span class="cm-treat-sub-price">$400</span></span>
+                  </label>
+                  <label class="cm-treat-sub-option">
+                    <input type="checkbox" name="treatments" value="Radiesse - $450">
+                    <span class="cm-treat-sub-card"><span class="cm-treat-sub-name">Radiesse</span><span class="cm-treat-sub-price">$450</span></span>
+                  </label>
+                  <label class="cm-treat-sub-option">
+                    <input type="checkbox" name="treatments" value="Sculptra - $500">
+                    <span class="cm-treat-sub-card"><span class="cm-treat-sub-name">Sculptra</span><span class="cm-treat-sub-price">$500</span></span>
+                  </label>
+                  <label class="cm-treat-sub-option">
+                    <input type="checkbox" name="treatments" value="Skinvive - $300">
+                    <span class="cm-treat-sub-card"><span class="cm-treat-sub-name">Skinvive</span><span class="cm-treat-sub-price">$300</span></span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- 4. MESOTHERAPY -->
+              <div class="cm-treat-category">
+                <button type="button" class="cm-treat-category-header" onclick="cmToggleCategory(this)">
+                  <span class="cm-category-icon">▸</span>
+                  <span class="cm-category-name">Mesotherapy</span>
+                </button>
+                <div class="cm-treat-category-items">
+                  <label class="cm-treat-sub-option">
+                    <input type="checkbox" name="treatments" value="Mesotherapy - Face - $250">
+                    <span class="cm-treat-sub-card"><span class="cm-treat-sub-name">Mesotherapy — Face</span><span class="cm-treat-sub-price">$250</span></span>
+                  </label>
+                  <label class="cm-treat-sub-option">
+                    <input type="checkbox" name="treatments" value="Meso - Face, Neck, Décolleté - $400">
+                    <span class="cm-treat-sub-card"><span class="cm-treat-sub-name">Meso — Face, Neck, Décolleté</span><span class="cm-treat-sub-price">$400</span></span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- 5. DERMAL FILLERS -->
+              <div class="cm-treat-category">
+                <button type="button" class="cm-treat-category-header" onclick="cmToggleCategory(this)">
+                  <span class="cm-category-icon">▸</span>
+                  <span class="cm-category-name">Dermal Fillers</span>
+                </button>
+                <div class="cm-treat-category-items">
+                  <label class="cm-treat-sub-option">
+                    <input type="checkbox" name="treatments" value="Premium Dermal Fillers - $400 to $500">
+                    <span class="cm-treat-sub-card"><span class="cm-treat-sub-name">Premium Dermal Collection</span><span class="cm-treat-sub-price">$400-$500</span></span>
+                  </label>
+                  <label class="cm-treat-sub-option">
+                    <input type="checkbox" name="treatments" value="Dissolve Filler - from $150">
+                    <span class="cm-treat-sub-card"><span class="cm-treat-sub-name">Dissolve Filler</span><span class="cm-treat-sub-price">from $150</span></span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- 6. BIOSTIMULATORS -->
+              <div class="cm-treat-category">
+                <button type="button" class="cm-treat-category-header" onclick="cmToggleCategory(this)">
+                  <span class="cm-category-icon">▸</span>
+                  <span class="cm-category-name">Biostimulators</span>
+                </button>
+                <div class="cm-treat-category-items">
+                  <label class="cm-treat-sub-option">
+                    <input type="checkbox" name="treatments" value="Hair Restoration - $300">
+                    <span class="cm-treat-sub-card"><span class="cm-treat-sub-name">Hair Restoration</span><span class="cm-treat-sub-price">$300</span></span>
+                  </label>
+                  <label class="cm-treat-sub-option">
+                    <input type="checkbox" name="treatments" value="Bio Stimulator Face Rejuran - $400">
+                    <span class="cm-treat-sub-card"><span class="cm-treat-sub-name">Bio Stimulator Face Rejuran</span><span class="cm-treat-sub-price">$400</span></span>
+                  </label>
+                  <label class="cm-treat-sub-option">
+                    <input type="checkbox" name="treatments" value="Under Eyes Rejuran - $300">
+                    <span class="cm-treat-sub-card"><span class="cm-treat-sub-name">Under Eyes Rejuran</span><span class="cm-treat-sub-price">$300</span></span>
+                  </label>
+                </div>
+              </div>
             </div>
+            <div class="cm-selected-treats" id="cmSelectedTreats"></div>
+            <div class="cm-treatment-note">Multi-syringe discounts available. Book a consultation to discuss your personalised plan.</div>
           </div>
           <div class="cm-field">
             <label for="cm-message">Additional Notes <span class="cm-optional">(optional)</span></label>
@@ -3677,15 +3777,68 @@
 
     document.getElementById('cm-date').addEventListener('change', updateBlockedTimeSlots);
 
+    // Handle category toggle
+    function cmToggleCategory(header) {
+      event.preventDefault();
+      event.stopPropagation();
+      const category = header.closest('.cm-treat-category');
+      category.classList.toggle('open');
+    }
+
+    // Auto-open first category on modal open
+    const originalOpenModal = window.openConsultModal;
+    window.openConsultModal = function() {
+      originalOpenModal();
+      setTimeout(() => {
+        const firstCategory = document.querySelector('.cm-treat-category');
+        if (firstCategory) {
+          firstCategory.classList.add('open');
+        }
+        cmUpdateSelectedTreats();
+      }, 50);
+    };
+
     // Ensure treatment cards select reliably even on touch / messy click targets
-    document.querySelectorAll('.cm-treat-option').forEach(label => {
-      label.addEventListener('click', () => {
-        const input = label.querySelector('input[type="radio"][name="treatment"]');
-        if (input) {
-          input.checked = true;
+    document.querySelectorAll('.cm-treat-sub-option').forEach(label => {
+      label.addEventListener('click', (e) => {
+        const input = label.querySelector('input[type="checkbox"][name="treatments"]');
+        if (input && e.target !== input) {
+          e.preventDefault();
+          e.stopPropagation();
+          input.checked = !input.checked;
           input.dispatchEvent(new Event('change', { bubbles: true }));
+          cmUpdateSelectedTreats();
         }
       });
+    });
+
+    // Update selected treatments display
+    function cmUpdateSelectedTreats() {
+      const selected = Array.from(document.querySelectorAll('input[name="treatments"]:checked')).map(i => i.value);
+      const container = document.getElementById('cmSelectedTreats');
+      
+      if (selected.length === 0) {
+        container.innerHTML = '';
+        return;
+      }
+
+      container.innerHTML = selected.map((treat, idx) => 
+        `<span class="cm-selected-treat-tag">${treat} <button type="button" class="cm-selected-treat-remove" onclick="cmRemoveTreatment(${idx})">✕</button></span>`
+      ).join('');
+    }
+
+    function cmRemoveTreatment(index) {
+      const checkboxes = Array.from(document.querySelectorAll('input[name="treatments"]:checked'));
+      if (checkboxes[index]) {
+        checkboxes[index].checked = false;
+        checkboxes[index].dispatchEvent(new Event('change', { bubbles: true }));
+        cmUpdateSelectedTreats();
+      }
+    }
+
+    // Update selected treatments when checkbox changes
+    document.querySelectorAll('input[name="treatments"]').forEach(input => {
+      input.addEventListener('change', cmUpdateSelectedTreats);
     });
 
     async function cmValidatePage(page) {
@@ -3696,7 +3849,8 @@
         if (!em || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) return 'Please enter a valid email address.';
       }
       if (page === 2) {
-        if (!f.querySelector('input[name="treatment"]:checked')) return 'Please select a treatment of interest.';
+        const selectedTreats = document.querySelectorAll('input[name="treatments"]:checked');
+        if (selectedTreats.length === 0) return 'Please select at least one treatment.';
       }
       if (page === 3) {
         const date = f.querySelector('#cm-date').value;
@@ -3768,7 +3922,7 @@
         last_name: f.querySelector('#cm-lname').value.trim(),
         email: f.querySelector('#cm-email').value.trim(),
         phone: f.querySelector('#cm-phone').value.trim(),
-        treatment: (f.querySelector('input[name="treatment"]:checked') || {}).value || '',
+        treatment: Array.from(f.querySelectorAll('input[name="treatments"]:checked')).map(i => i.value).join('; '),
         message: f.querySelector('#cm-message').value.trim(),
         image_url: imageUrl,
         preferred_date: f.querySelector('#cm-date').value,
@@ -3810,6 +3964,10 @@
       cmClearImage();
       cmGoToPage(1);
       updateBlockedTimeSlots();
+      // Reset category states
+      document.querySelectorAll('.cm-treat-category').forEach(cat => cat.classList.remove('open'));
+      // Clear selected treatments display
+      document.getElementById('cmSelectedTreats').innerHTML = '';
     }
   </script>
   <!-- ═══════════════════════════════════════════════

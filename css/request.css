@@ -953,3 +953,280 @@
     .cm-image-remove:active {
       transform: translateY(0);
     }
+
+    /* ── Categorized Treatment List ── */
+    .cm-treatment-categorized {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 18px;
+      border: 1px solid rgba(201, 169, 110, 0.12);
+      border-radius: 2px;
+      background: rgba(201, 169, 110, 0.02);
+      overflow: hidden;
+    }
+
+    .cm-treat-category {
+      border-bottom: 1px solid rgba(201, 169, 110, 0.08);
+    }
+
+    .cm-treat-category:last-child {
+      border-bottom: none;
+    }
+
+    .cm-treat-category-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      background: transparent;
+      border: none;
+      padding: 14px 16px;
+      cursor: pointer;
+      font-family: 'Jost', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(201, 169, 110, 0.75);
+      transition: all .3s ease;
+      text-align: left;
+    }
+
+    .cm-treat-category-header:hover {
+      background: rgba(201, 169, 110, 0.04);
+      color: rgba(201, 169, 110, 0.95);
+    }
+
+    .cm-category-icon {
+      display: inline-flex;
+      font-size: 14px;
+      transition: transform .3s ease;
+      flex-shrink: 0;
+    }
+
+    .cm-treat-category.open .cm-category-icon {
+      transform: rotate(90deg);
+    }
+
+    .cm-category-name {
+      flex: 1;
+    }
+
+    .cm-treat-category-items {
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      background: transparent;
+      border-top: none;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s ease, opacity .3s ease;
+      opacity: 0;
+    }
+
+    .cm-treat-category.open .cm-treat-category-items {
+      display: flex;
+      max-height: 800px;
+      opacity: 1;
+    }
+
+    .cm-treat-sub-option {
+      position: relative;
+      display: block;
+      cursor: pointer;
+    }
+
+    .cm-treat-sub-option:last-child {
+    }
+
+    .cm-treat-sub-option input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      margin: 0;
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    .cm-treat-sub-option::after {
+      content: '';
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 14px;
+      border: none;
+      border-radius: 2px;
+      background: transparent;
+      z-index: 3;
+      pointer-events: none;
+      transition: all .2s ease;
+    }
+
+    .cm-treat-sub-option input:checked::after {
+      background: var(--gold);
+    }
+
+    .cm-treat-sub-option input:checked~.cm-treat-sub-card {
+      background: transparent;
+      border-left: none;
+      padding-left: 16px;
+    }
+    
+
+    .cm-treat-sub-option input:checked~.cm-treat-sub-card .cm-treat-sub-name {
+      color: rgba(250, 246, 240, 1);
+      font-weight: 500;
+    }
+
+    .cm-treat-sub-option input:checked~.cm-treat-sub-card .cm-treat-sub-price {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .cm-treat-sub-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      cursor: pointer;
+      gap: 12px;
+      transition: all .3s ease;
+      background: transparent;
+      width: 100%;
+    }
+
+    .cm-treat-sub-card:hover {
+      background: transparent;
+    }
+
+    .cm-treat-sub-option input:checked+.cm-treat-sub-card {
+      background: transparent;
+      border-left: none;
+      padding-left: 16px;
+    }
+
+    .cm-treat-sub-name {
+      font-family: 'Jost', sans-serif;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+      text-transform: capitalize;
+      color: rgba(250, 246, 240, 0.8);
+      font-weight: 400;
+      flex: 1;
+    }
+
+    .cm-treat-sub-option input:checked+.cm-treat-sub-card .cm-treat-sub-name {
+      color: rgba(250, 246, 240, 0.95);
+    }
+
+    .cm-treat-sub-price {
+      font-family: 'Jost', sans-serif;
+      font-size: 14px;
+      color: rgba(201, 169, 110, 0.65);
+      font-weight: 400;
+      flex-shrink: 0;
+      min-width: 60px;
+      text-align: right;
+    }
+
+    .cm-treat-sub-option input:checked+.cm-treat-sub-card .cm-treat-sub-price {
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    .cm-treatment-note {
+      font-family: 'Jost', sans-serif;
+      font-size: 12px;
+      color: rgba(250, 246, 240, 0.35);
+      font-weight: 300;
+      line-height: 1.4;
+      padding: 10px 12px;
+      background: rgba(201, 169, 110, 0.02);
+      border-top: 1px solid rgba(201, 169, 110, 0.08);
+      text-align: center;
+      margin-top: 6px;
+    }
+
+    .cm-selected-treats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 12px;
+      margin-top: 8px;
+      min-height: 20px;
+      background: rgba(201, 169, 110, 0.04);
+      border-radius: 2px;
+      border: 1px solid rgba(201, 169, 110, 0.08);
+    }
+
+    .cm-selected-treat-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      background: rgba(201, 169, 110, 0.15);
+      border: 1px solid rgba(201, 169, 110, 0.35);
+      border-radius: 999px;
+      font-size: 11px;
+      color: rgba(250, 246, 240, 0.9);
+      font-family: 'Jost', sans-serif;
+    }
+
+    .cm-selected-treat-remove {
+      cursor: pointer;
+      padding: 0;
+      margin-left: 2px;
+      color: rgba(201, 169, 110, 0.7);
+      font-weight: bold;
+      background: none;
+      border: none;
+      font-size: 14px;
+      line-height: 1;
+    }
+
+    .cm-selected-treat-remove:hover {
+      color: var(--gold);
+    }
+
+    @media(max-width:600px) {
+      .cm-treatment-categorized {
+        margin-bottom: 12px;
+      }
+
+      .cm-treat-category-header {
+        padding: 12px 14px;
+        font-size: 12px;
+      }
+
+      .cm-treat-sub-card {
+        padding: 10px 14px;
+        font-size: 12px;
+      }
+
+      .cm-treat-sub-name {
+        font-size: 12px;
+      }
+
+      .cm-treat-sub-price {
+        min-width: 50px;
+        font-size: 11px;
+      }
+
+      .cm-selected-treats {
+        flex-wrap: wrap;
+        gap: 5px;
+        padding: 8px;
+        margin-top: 6px;
+      }
+
+      .cm-selected-treat-tag {
+        font-size: 10px;
+        padding: 4px 8px;
+      }
+    }

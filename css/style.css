@@ -855,6 +855,7 @@ section h2 em {
   flex-direction: column;
   transition: transform .4s ease;
   position: relative;
+  cursor: pointer;
 }
 
 .tcard-dark {
@@ -2109,10 +2110,12 @@ nav.s img.logo-img {
   opacity: 0;
   transition: opacity .35s ease;
   z-index: 3;
+  pointer-events: none;
 }
 
 .tcard:hover .tcard-play-overlay {
   opacity: 1;
+  pointer-events: auto;
 }
 
 .tcard-play-btn {
