@@ -1,34 +1,3 @@
-const cur = document.getElementById('cur'), ring = document.getElementById('ring');
-    let mx = 0, my = 0, rx = 0, ry = 0;
-
-    // Disable custom cursor globally to keep default OS cursor behavior
-    const isCustomCursorEnabled = false;
-    if (isCustomCursorEnabled) {
-      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768 || window.matchMedia('(pointer: coarse)').matches || window.matchMedia('(hover: none)').matches;
-      if (!isMobile) {
-        document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY });
-        (function a() {
-          rx += (mx - rx) * .12; ry += (my - ry) * .12;
-          cur.style.cssText = `left:${mx}px;top:${my}px`;
-          ring.style.cssText = `left:${rx}px;top:${ry}px`;
-          requestAnimationFrame(a);
-        })();
-        document.querySelectorAll('a,button,.tcard,.pcat,.pillar,.eitem,.ac-step').forEach(el => {
-          el.addEventListener('mouseenter', () => { cur.classList.add('h'); ring.classList.add('h') });
-          el.addEventListener('mouseleave', () => { cur.classList.remove('h'); ring.classList.remove('h') });
-        });
-      } else {
-        cur.style.display = 'none';
-        ring.style.display = 'none';
-      }
-    } else {
-      // Hide cursor elements on all devices and restore normal pointer
-      if (cur) cur.style.display = 'none';
-      if (ring) ring.style.display = 'none';
-      document.documentElement.style.cursor = '';
-    }
-
-
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => nav.classList.toggle('s', window.scrollY > 70));
 
