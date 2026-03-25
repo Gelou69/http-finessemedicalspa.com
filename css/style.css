@@ -44,7 +44,7 @@ body {
   background: var(--cream);
   color: var(--ink);
   overflow-x: hidden;
-  cursor: none;
+  cursor: auto;
   font-size: 17.5px;
   line-height: 1.75;
   font-weight: 300;
@@ -222,7 +222,7 @@ nav.s .nav-links a {
   display: none;
   flex-direction: column;
   gap: 6px;
-  cursor: none;
+  cursor: pointer;
   padding: 4px;
 }
 
